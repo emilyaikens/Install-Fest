@@ -38,25 +38,38 @@ let buttons = [
     new TechButton('postgreSQL', dt, 'https://postgresapp.com/'),
 ]
 
-// for each button in buttons array...
 buttons.forEach(b => {
-    //create a new div with the category name as class, if it does not already exist
-    if (document.querySelector(`.${b.category}`) === null) {
-        let div = document.createElement('div');
-        div.className = b.category;
-        document.getElementById('main').appendChild(div); // append new div
-        // let catHead = document.createElement('h3');
-        // catHead.innerHTML = (b.category).replace(/-/g, ' ');
-        // document.querySelector(`.${b.category}`).appendChild(catHead); // append new h3
-    }
-
-    // create a new button named after object name
     let bt = document.createElement('button');
     bt.innerHTML = b.name;
-    document.querySelector(`.${b.category}`).appendChild(bt);
+    document.querySelector("#main").appendChild(bt);
 
-    // add event listener that opens link in new window when button is clicked
-    bt.addEventListener("click", function() {
-        window.open(b.link, '_blank')
+    bt.addEventListener('click', function() {
+        window.open(b.link, '_blank');
     })
 })
+
+
+// // comment in code below for buttons to be sorted into categories
+
+// buttons.forEach(b => {
+//     //create a new div with the category name as class, if it does not already exist
+//     if (document.querySelector(`.${b.category}`) === null) {
+//         let div = document.createElement('div');
+//         div.id = b.category;
+//         div.className = 'category';
+//         document.getElementById('main').appendChild(div); // append new div
+//         // let catHead = document.createElement('h3');
+//         // catHead.innerHTML = (b.category).replace(/-/g, ' ');
+//         // document.querySelector(`.${b.category}`).appendChild(catHead); // append new h3
+//     }
+
+//     // create a new button named after object name
+//     let bt = document.createElement('button');
+//     bt.innerHTML = b.name;
+//     document.querySelector(`#${b.category}`).appendChild(bt);
+
+//     // add event listener that opens link in new window when button is clicked
+//     bt.addEventListener("click", function() {
+//         window.open(b.link, '_blank')
+//     })
+// })
