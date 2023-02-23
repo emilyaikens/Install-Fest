@@ -6,10 +6,14 @@ class TechButton {
     }
 }
 
-// category name variables
+// category name variables, also names of div classes
 let br = 'browser';
 let co = 'communication';
 let cf = 'configuration';
+let rt = 'runtime-environment';
+let ide = 'ide';
+let vi = 'virtual';
+let dt = 'data'
 
 // create array of buttons, each belonging to TechButton class
 let buttons = [
@@ -23,24 +27,27 @@ let buttons = [
     new TechButton('Rectangle', cf, 'https://rectangleapp.com/'),
     new TechButton('Git', cf, 'https://git-scm.com/book/en/v2/Getting-Started-Installing-Git'),
     new TechButton('Oh My Zsh', cf, 'https://ohmyz.sh/'),
-    // new TechButton('Python', rt, 'https://www.python.org/downloads/'),
-    // new TechButton('Java Azul Zulu', rt, 'https://www.azul.com/downloads/?package=jdk'),
-    // new TechButton('Node.js', rt, 'https://nodejs.org/en/download/'),
-    // new TechButton('Intellij', ide, 'https://www.jetbrains.com/idea/download/#section=mac'),
-    // new TechButton('VS Code', ide, 'https://code.visualstudio.com/download'),
+    new TechButton('Python', rt, 'https://www.python.org/downloads/'),
+    new TechButton('Java Azul Zulu', rt, 'https://www.azul.com/downloads/?package=jdk'),
+    new TechButton('Node.js', rt, 'https://nodejs.org/en/download/'),
+    new TechButton('Intellij', ide, 'https://www.jetbrains.com/idea/download/#section=mac'),
+    new TechButton('VS Code', ide, 'https://code.visualstudio.com/download'),
+    new TechButton('Docker', vi, 'https://www.docker.com/products/docker-desktop/'),
+    new TechButton('virtualenv', vi, 'https://pypi.org/project/virtualenv/'),
+    new TechButton('pgAdmin', dt, 'https://www.pgadmin.org/download/pgadmin-4-macos/'),
+    new TechButton('postgreSQL', dt, 'https://postgresapp.com/'),
 ]
 
 // for each button in buttons array...
 buttons.forEach(b => {
-
     //create a new div with the category name as class, if it does not already exist
     if (document.querySelector(`.${b.category}`) === null) {
         let div = document.createElement('div');
         div.className = b.category;
         document.getElementById('main').appendChild(div); // append new div
-        let catHead = document.createElement('h3');
-        catHead.innerHTML = b.category;
-        document.querySelector(`.${b.category}`).appendChild(catHead); // append new h3
+        // let catHead = document.createElement('h3');
+        // catHead.innerHTML = (b.category).replace(/-/g, ' ');
+        // document.querySelector(`.${b.category}`).appendChild(catHead); // append new h3
     }
 
     // create a new button named after object name
