@@ -6,8 +6,11 @@ class TechButton {
     }
 }
 
-let br = "browser"
-let co = "communication"
+// category name variables
+let br = 'browser';
+let co = 'communication';
+let cf = 'configuration';
+let la = 'languages';
 
 // create array of buttons, each belonging to TechButton class
 let buttons = [
@@ -16,16 +19,27 @@ let buttons = [
     new TechButton('Firefox', br, 'https://www.mozilla.org/en-US/firefox/new/'),
     new TechButton('Microsoft Teams', co, 'https://www.microsoft.com/en-us/microsoft-teams/download-app'),
     new TechButton('Slack', co, 'https://slack.com/downloads/mac'),
+    new TechButton('Zoom', co, 'https://support.zoom.us/hc/en-us/articles/203020795-Installing-the-Zoom-application-on-macOS'),
+    new TechButton('Homebrew', cf, 'https://docs.brew.sh/Installation'),
+    new TechButton('Rectangle', cf, 'https://rectangleapp.com/'),
+    new TechButton('Git', cf, 'https://git-scm.com/book/en/v2/Getting-Started-Installing-Git'),
+    new TechButton('Oh My Zsh', cf, 'https://ohmyz.sh/'),
+    new TechButton('Python', la, 'https://www.python.org/downloads/'),
+    new TechButton('Java Azul Zulu', la, 'https://www.azul.com/downloads/?package=jdk'),
+
 ]
 
-// for each button...
+// for each button in buttons array...
 buttons.forEach(b => {
 
     //create a new div with the category name as class, if it does not already exist
     if (document.querySelector(`.${b.category}`) === null) {
         let div = document.createElement('div');
         div.className = b.category;
-        document.getElementById('main').appendChild(div);
+        document.getElementById('main').appendChild(div); // append new div
+        let catHead = document.createElement('h3');
+        catHead.innerHTML = b.category;
+        document.querySelector(`.${b.category}`).appendChild(catHead); // append new h3
     }
 
     // create a new button named after object name
@@ -37,5 +51,4 @@ buttons.forEach(b => {
     bt.addEventListener("click", function() {
         window.open(b.link, '_blank')
     })
-    
 })
