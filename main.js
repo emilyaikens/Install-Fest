@@ -10,7 +10,6 @@ class TechButton {
 let br = 'browser';
 let co = 'communication';
 let cf = 'configuration';
-let la = 'languages';
 
 // create array of buttons, each belonging to TechButton class
 let buttons = [
@@ -24,9 +23,11 @@ let buttons = [
     new TechButton('Rectangle', cf, 'https://rectangleapp.com/'),
     new TechButton('Git', cf, 'https://git-scm.com/book/en/v2/Getting-Started-Installing-Git'),
     new TechButton('Oh My Zsh', cf, 'https://ohmyz.sh/'),
-    new TechButton('Python', la, 'https://www.python.org/downloads/'),
-    new TechButton('Java Azul Zulu', la, 'https://www.azul.com/downloads/?package=jdk'),
-
+    // new TechButton('Python', rt, 'https://www.python.org/downloads/'),
+    // new TechButton('Java Azul Zulu', rt, 'https://www.azul.com/downloads/?package=jdk'),
+    // new TechButton('Node.js', rt, 'https://nodejs.org/en/download/'),
+    // new TechButton('Intellij', ide, 'https://www.jetbrains.com/idea/download/#section=mac'),
+    // new TechButton('VS Code', ide, 'https://code.visualstudio.com/download'),
 ]
 
 // for each button in buttons array...
